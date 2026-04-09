@@ -1,0 +1,11 @@
+{
+  "name": "mongodb-project-root",
+  "version": "1.0.0",
+  "description": "User Management System Root",
+  "scripts": {
+    "install-backend": "cd backend && npm install",
+    "start": "cd backend && npm start",
+    "dev": "cd backend && npm run dev",
+    "test-indexes": "cd backend && npm run test-indexes"
+  }
+}
