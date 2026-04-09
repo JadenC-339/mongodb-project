@@ -543,7 +543,8 @@ function exportCSV(){if(!allUsers.length){toast('No data to export','error');ret
   URL.revokeObjectURL(url);toast('CSV downloaded!','success');termLog('EXPORT','/csv',200)}
 
 // ═══ API ═══
-let API='http://localhost:5000',cP=1,tP=1;const LM=5;
+let API = window.location.origin; // Automatically uses Render URL when deployed
+let cP = 1, tP = 1; const LM = 5;
 function setApi(){API=document.getElementById('apiIn').value.trim().replace(/\/$/,'');document.getElementById('aUrl').textContent=API.replace(/https?:\/\//,'');rPF()}
 const _d={};function debounce(fn,ms){return(...a)=>{clearTimeout(_d[fn]);_d[fn]=setTimeout(()=>fn(...a),ms)}}
 function toast(m,t='info'){const ic={success:'✅',error:'❌',info:'ℹ️'};const el=document.createElement('div');el.className=`toast ${t}`;el.innerHTML=`<span class="toast-ic">${ic[t]}</span><span>${m}</span>`;document.getElementById('tc').appendChild(el);setTimeout(()=>{el.style.opacity='0';el.style.transform='translateX(30px)';el.style.transition='.4s';setTimeout(()=>el.remove(),400)},3200)}
